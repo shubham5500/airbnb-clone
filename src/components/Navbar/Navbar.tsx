@@ -1,10 +1,11 @@
+"use client"
 import React from 'react';
 import Container from "../Container/Container";
 import Logo from './Logo';
 import Search from './Search';
 import UserMenu from './UserMenu';
 
-function Navbar(props) {
+function Navbar({}) {
     return (
         <div className="fixed w-full shadow-sm">
             <div className="py-4 border-[1px]">

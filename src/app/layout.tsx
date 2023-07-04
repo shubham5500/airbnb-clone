@@ -3,6 +3,7 @@ import { Nunito } from 'next/font/google';
 import Navbar from "@/components/Navbar/Navbar";
 import React from "react";
 import Model from '@/components/Models/Model';
+import { TailwindIndicator } from '@/components/TailwindIndicator/TailwindIndicator';
 
 const font = Nunito({ subsets: ['latin'] })
 
@@ -22,6 +23,7 @@ export default function RootLayout({
       <Navbar/>
       <Model isOpen title='Hello world'/>
       {children}
+      <TailwindIndicator/>
       </body>
     </html>
   )

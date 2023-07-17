@@ -8,7 +8,7 @@ interface ButtonProps {
   disabled?: boolean;
   small?: boolean;
   outline?: boolean;
-  icon: IconType;
+  icon?: IconType;
 }
 
 const Button: FC<ButtonProps> = ({

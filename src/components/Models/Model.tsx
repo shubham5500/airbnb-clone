@@ -11,7 +11,8 @@ interface ModelProps {
   body?: React.ReactElement;
   footer?: React.ReactElement;
   secondaryAction?: () => void;
-  secondaryLabel?: string;
+  secondaryActionLabel?: string;
+  actionLabel?: string;
   disabled?: boolean;
 }
 
@@ -23,7 +24,8 @@ const Model: FC<ModelProps> = ({
   body,
   footer,
   secondaryAction,
-  secondaryLabel,
+  secondaryActionLabel,
+  actionLabel,
   disabled,
 }) => {
   const [showModel, setShowModel] = useState(isOpen);
@@ -141,6 +143,7 @@ const Model: FC<ModelProps> = ({
                             left-9
 
                         "
+                        onClick={handleClose}
                 >
                   <IoMdClose size={18} />
                 </button>
@@ -155,7 +158,21 @@ const Model: FC<ModelProps> = ({
 
               <div className="flex flex-col gap-2 p-6">
                 <div className="flex flex-row items-center gap-4 w-full">
-                    <Button label={'Submit'}/>
+                  {secondaryActionLabel && secondaryAction && (
+                    <Button
+                      outline
+                      label={secondaryActionLabel}
+                      onClick={handleSecondaryAction}
+                      disabled={disabled}
+                    />
+                  )}
+                  {actionLabel && (
+                    <Button
+                      label={actionLabel}
+                      onClick={handleSubmit}
+                      disabled={disabled}
+                    />
+                  )}
                 </div>
               </div>
             </div>

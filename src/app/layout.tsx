@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar/Navbar";
 import React from "react";
 import Model from '@/components/Models/Model';
 import { TailwindIndicator } from '@/components/TailwindIndicator/TailwindIndicator';
+import RegisterModal from '@/components/Models/RegisterModal';
 
 const font = Nunito({ subsets: ['latin'] })
 
@@ -21,7 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={font.className}>
       <Navbar/>
-      <Model isOpen title='Hello world'/>
+      <RegisterModal/>
       {children}
       <TailwindIndicator/>
       </body>
